@@ -122,27 +122,27 @@
 
 
   <div class="panels">
-    <div class="panel panel1">
+    <div class="panel panel1" id="panel1">
       <p>Hey</p>
       <p>Let's</p>
       <p>Dance</p>
     </div>
-    <div class="panel panel2">
+    <div class="panel panel2" id="panel2">
       <p>Give</p>
       <p>Take</p>
       <p>Receive</p>
     </div>
-    <div class="panel panel3">
+    <div class="panel panel3" id="panel3">
       <p>Experience</p>
       <p>It</p>
       <p>Today</p>
     </div>
-    <div class="panel panel4">
+    <div class="panel panel4" id="panel4">
       <p>Give</p>
       <p>All</p>
       <p>You can</p>
     </div>
-    <div class="panel panel5">
+    <div class="panel panel5" id="panel5">
       <p>Life</p>
       <p>In</p>
       <p>Motion</p>
@@ -152,12 +152,33 @@
   <script>
     const panels = document.querySelectorAll('.panel');
 
-    function toggleOpen() {
+    //this is to extend the exercise and only make one panel open at a time
+
+    const active = {
+      open: null
+    }
+
+    function updateOpen(target) {
+      if (active.open == null) {
+        active['open'] = target;
+      } else if (active.open != target) {
+        const panel = document.querySelector(`#${active.open}`);
+        panel.classList.toggle('open')
+        active['open'] = target;
+      } else {
+        active['open'] = null
+      }
+    }
+
+    //end extension
+
+    function toggleOpen(e) {
       this.classList.toggle('open')
+      updateOpen(this.id);
     }
 
     function toggleActive(e) {
-      if (e.propertyName == 'flex-grow') {
+      if (e.propertyName.includes('flex')) {
         this.classList.toggle('open-active')
       }
     }
