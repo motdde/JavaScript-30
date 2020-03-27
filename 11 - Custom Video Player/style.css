@@ -72,6 +72,7 @@ body {
   transition: all .3s;
   flex-wrap: wrap;
   background: rgba(0,0,0,0.1);
+  z-index: 2147483648;
 }
 
 .player:hover .player__controls {
@@ -101,7 +102,7 @@ body {
   width: 50%;
   background: #ffc600;
   flex: 0;
-  flex-basis: 50%;
+  flex-basis: 0%;
 }
 
 /* unholy css to style input type="range" */
