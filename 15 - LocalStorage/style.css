@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  background: url('http://wes.io/hx9M/oh-la-la.jpg') center no-repeat;
+  /* background: url('http://wes.io/hx9M/oh-la-la.jpg') center no-repeat; */
   background-size: cover;
   min-height: 100vh;
   display: flex;
@@ -68,11 +68,11 @@ h2 {
   content: '🌮';
 }
 
-.add-items {
+.add-items, .manage-items {
   margin-top: 20px;
 }
 
-.add-items input {
+.add-items input, .manage-items input  {
   padding: 10px;
   outline: 0;
   border: 1px solid rgba(0,0,0,0.1);
